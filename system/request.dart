@@ -6,13 +6,39 @@ import 'package:http/http.dart' as http;
 class Request {
   static void post(String url, void Function(_GetRequest) callback,
       {Map<String, String> headers, dynamic body, Encoding encoding}) async {
-
-    _req(method: "POST", body: body, encoding: encoding, headers: headers, callback: (gr) => callback(gr) );
+    await _req(
+        url: url,
+        method: "POST",
+        body: body,
+        encoding: encoding,
+        headers: headers,
+        cb: (_gr) => callback(_gr));
   }
 
-  static _req(
+  static void get(String url, void Function(_GetRequest) callback,
+      {Map<String, String> headers}) {
+    _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
+  }
+
+  static void put(String url, void Function(_GetRequest) callback,
+      {Map<String, String> headers, dynamic body, Encoding encoding}) {
+    _req(
+        url: url,
+        method: "GET",
+        body: body,
+        encoding: encoding,
+        headers: headers,
+        cb: (gr) => callback(gr));
+  }
+
+  static void delete(String url, void Function(_GetRequest) callback,
+      {Map<String, String> headers}) {
+    _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
+  }
+
+  static Future _req(
       {String url,
-      void Function(_GetRequest) callback,
+      void Function(_GetRequest) cb,
       String method = "POST",
       Map<String, String> headers,
       dynamic body,
@@ -34,7 +60,6 @@ class Request {
         result = await http.put(url,
             body: body, encoding: encoding, headers: headers);
       else if (method == "GET") result = await http.get(url, headers: headers);
-
       if (result.statusCode == 200) {
         gr.isSuccess = true;
         gr.response = result.body;
@@ -42,11 +67,11 @@ class Request {
         gr.error = result.body;
       }
       gr.isRedirect = result.isRedirect;
-      gr.statusCode = result.statucCode;
+      gr.statusCode = result.statusCode;
     } on SocketException catch (e) {
       gr.error = e.message;
     }
-    callback(gr);
+    cb(gr);
   }
 }
 
