@@ -16,13 +16,13 @@ class Request {
   }
 
   static void get(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers}) {
-    _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
+      {Map<String, String> headers}) async {
+    await _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
   }
 
   static void put(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers, dynamic body, Encoding encoding}) {
-    _req(
+      {Map<String, String> headers, dynamic body, Encoding encoding}) async {
+    await _req(
         url: url,
         method: "GET",
         body: body,
@@ -32,8 +32,8 @@ class Request {
   }
 
   static void delete(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers}) {
-    _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
+      {Map<String, String> headers}) async {
+    await _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
   }
 
   static Future _req(
