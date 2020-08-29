@@ -5,36 +5,38 @@ import 'package:http/http.dart' as http;
 
 class Request {
   static void post(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers, dynamic body, Encoding encoding}) async {
-    await _req(
-        url: url,
-        method: "POST",
-        body: body,
-        encoding: encoding,
-        headers: headers,
-        cb: (_gr) => callback(_gr));
-  }
+          {Map<String, String> headers,
+          dynamic body,
+          Encoding encoding}) async =>
+      await _req(
+          url: url,
+          method: "POST",
+          body: body,
+          encoding: encoding,
+          headers: headers,
+          cb: (_gr) => callback(_gr));
 
   static void get(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers}) async {
-    await _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
-  }
+          {Map<String, String> headers}) async =>
+      await _req(
+          url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
 
   static void put(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers, dynamic body, Encoding encoding}) async {
-    await _req(
-        url: url,
-        method: "GET",
-        body: body,
-        encoding: encoding,
-        headers: headers,
-        cb: (gr) => callback(gr));
-  }
+          {Map<String, String> headers,
+          dynamic body,
+          Encoding encoding}) async =>
+      await _req(
+          url: url,
+          method: "GET",
+          body: body,
+          encoding: encoding,
+          headers: headers,
+          cb: (gr) => callback(gr));
 
   static void delete(String url, void Function(_GetRequest) callback,
-      {Map<String, String> headers}) async {
-    await _req(url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
-  }
+          {Map<String, String> headers}) async =>
+      await _req(
+          url: url, method: "GET", headers: headers, cb: (gr) => callback(gr));
 
   static Future _req(
       {String url,
