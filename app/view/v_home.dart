@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class HomeView extends View<HomePage> {
 
-  ViewHome(HomePage prop) : super(prop);
+  HomeView(HomePage prop) : super(prop);
 
   Widget build(BuildContext context) {
     return Scaffold(
