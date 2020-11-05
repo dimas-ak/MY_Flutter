@@ -1,3 +1,8 @@
+import 'package:your_flutter_project/app/controller/home_controller.dart';
+import 'package:your_flutter_project/system/page.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
 class HomeView extends View<HomePage> {
 
   ViewHome(HomePage prop) : super(prop);

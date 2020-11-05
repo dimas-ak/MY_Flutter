@@ -1,3 +1,9 @@
+import 'dart:io';
+
+import 'package:your_flutter_project/app/view/home_view.dart';
+import 'package:your_flutter_project/system/page.dart';
+import 'package:flutter/cupertino.dart';
+
 class HomeController extends StatefulWidget
 {
   @override

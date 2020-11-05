@@ -1,7 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:unity_flutter/system/router.dart';
+import 'package:your_flutter_project/system/router.dart';
 
 class App extends StatelessWidget {
   final String baseRoute;

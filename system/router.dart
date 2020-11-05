@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:unity_flutter/app/config/routes.dart';
-import 'package:unity_flutter/system/app.dart';
+import 'package:your_flutter_project/app/config/routes.dart';
+import 'package:your_flutter_project/system/app.dart';
 
 typedef FutureCallback = Future Function(String);
 
