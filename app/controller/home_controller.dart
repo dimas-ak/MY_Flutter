@@ -2,7 +2,7 @@ class HomeController extends StatefulWidget
 {
   @override
   State<StatefulWidget> createState() {
-    return ViewHome();
+    return HomePage();
   }
 
   void mencobaSaja()
