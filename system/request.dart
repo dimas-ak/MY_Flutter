@@ -51,7 +51,6 @@ class Request {
     gr.response = null;
 
     var result;
-
     try {
       if (method == "POST")
         result = await http.post(url,

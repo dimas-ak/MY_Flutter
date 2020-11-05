@@ -7,6 +7,6 @@ class RoutesConfig
     'home'  : HomeController(),
   };
 
-  static String baseRoute = 'login';
+  static String baseRoute = 'home';
 
 }
