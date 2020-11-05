@@ -4,7 +4,7 @@ import '../controller/home_controller.dart';
 class RoutesConfig
 {
   static Map<String, Widget> routes = {
-    'home'  : HomeController(),
+    'home'  : HomePage(),
   };
 
   static String baseRoute = 'home';

@@ -3,9 +3,9 @@ import 'package:your_flutter_project/system/page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeView extends View<HomePage> {
+class HomeView extends View<HomeController> {
 
-  HomeView(HomePage prop) : super(prop);
+  HomeView(HomeController prop) : super(prop);
 
   Widget build(BuildContext context) {
     return Scaffold(

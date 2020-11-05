@@ -4,11 +4,11 @@ import 'package:your_flutter_project/app/view/home_view.dart';
 import 'package:your_flutter_project/system/page.dart';
 import 'package:flutter/cupertino.dart';
 
-class HomeController extends StatefulWidget
+class HomePage extends StatefulWidget
 {
   @override
   State<StatefulWidget> createState() {
-    return HomePage();
+    return HomeController();
   }
 
   void mencobaSaja()
@@ -17,7 +17,7 @@ class HomeController extends StatefulWidget
   }
 }
 
-class HomePage extends Controller<HomeController>
+class HomeController extends Controller<HomePage>
 {
   final String judul = "Home Page";
   @override
